@@ -10,7 +10,7 @@ library = library_data("library.json")
 books = library.books
 pprint(books)
 
-
+# endpoint to get all books
 @app.get("/books")
 async def read_books():
     return books

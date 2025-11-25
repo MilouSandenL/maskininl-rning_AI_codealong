@@ -9,7 +9,7 @@ def read_json(filename):
 
     return data
 
-
+#pydantic models
 class Book(BaseModel):
     id: int
     title: str
@@ -32,7 +32,7 @@ class Library(BaseModel):
     name: str
     books: list[Book]
 
-
+# function to load library data from a JSON file
 def library_data(filename):
     json_data = read_json(filename)
     return Library.model_validate(json_data)
