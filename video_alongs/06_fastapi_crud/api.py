@@ -46,9 +46,10 @@ async def filter_books(
 
 
 @app.post("/books/create_book")
-async def create_book(book_request: Book):
-    new_book = Book.model_validate(book_request)
-    books.append(new_book)
+async def create_book(book_request: Book): # new_book = Book(**book_request:Book):
+    new_book = Book.model_validate(book_request) # Book(**book_request)
+    # note that the new book is not persisted to the JSON file
+    books.append(new_book) 
 
     return new_book
 
