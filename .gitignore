@@ -208,3 +208,6 @@ __marimo__/
 
 
 .vscode/
+
+# ignore vector database
+vector_database
