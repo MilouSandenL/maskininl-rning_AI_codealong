@@ -16,6 +16,19 @@ def display_chat_messages():
             st.markdown(message["content"])
             
             
-
+def handle_user_input():
+    
+    if prompt := st.chat_input("Joke with JokeBot"):
+        st.session_state.messages.append({"role": "user", "content": prompt})
+        
+        bot_response = st.session_state.bot.chat(prompt).get("bot")
+        
+        response = f"Ro Båt: {bot_response}"
+        
+        with st.chat_message("user"):
+            st.markdown(prompt)
+        with st.chat_message("assistant"):
+            st.markdown(response)
             
+        st.session_state.messages.append({"role": "assistant", "content": response})
         
