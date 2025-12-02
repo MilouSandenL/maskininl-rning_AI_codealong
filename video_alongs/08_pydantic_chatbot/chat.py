@@ -18,8 +18,13 @@ class JokeBot:
     
 
 if __name__ == "__main__":
+    # vi skapar en joke-bot instans, som en klass (boten är skickad in som self)
     bot = JokeBot()
     
+    # kallar på metoden chat (bot är skickad in som self med 'bot.chat')
+    result = bot.chat("Tell me a math joke?")
     result = bot.chat("hello thare")
+    
+    result = bot.chat("What did i ask you first?")
     print(result)
         
